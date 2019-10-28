@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<div class="row container-fluid">
+    <form class="col-3"></form>
+    <form class="col-7" #signInForm="ngForm" (ngSubmit)="registrar(usuario)" ngNativeValidate>
+        <br>
+        <h1>REGISTRAR</h1>
+        <br>
+        <p>Nombre:</p>
+        <input type="text" class="form-control" #firstname="ngModel" name="firstname" [(ngModel)]="usuario.firstname" required>
+        <br>
+        <p>Apellido: </p>
+        <input type="text" class="form-control" #lastname="ngModel" name="lastname" [(ngModel)] = "usuario.lastname" required>
+        <br>
+        <p>Numero de identificación:</p>
+        <input type="number" class="form-control" #identificacion="ngModel" name="identificacion" [(ngModel)] = "usuario.identificacion" required pattern="[0-9]\d{5,10}" placeholder="123456">
+        <br>
+        <p>Fecha de nacimiento:</p>
+        <input type="date" class="form-control" #birthdate="ngModel" name="birthdate" [(ngModel)] = "usuario.birthdate" required>
+        <br>
+        <button type="submit" class="button">Registrar</button>
+    </form>
+    <form class="col-3"></form>
+    <form class="row-1" #getForm="ngForm" (ngSubmit)= "signIn()" ngNativeValidate>
+        <button type="submit" class="buttonDos" >Obtener Registros</button>
+    </form>
+</div>
