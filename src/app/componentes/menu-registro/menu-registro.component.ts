@@ -24,7 +24,7 @@ export class MenuRegistroComponent implements OnInit {
   ngOnInit() {
   }
 
-  signIn() {
+  obtener() {
     this._httpClientService.obtener().subscribe(
       (response: any) => {
         console.log(response)
@@ -46,7 +46,7 @@ export class MenuRegistroComponent implements OnInit {
           alert("Usuario registrado correctamente")
         }, err => {
           console.log(err)
-          alert("Hubo un error inesperado, intentalo de nuevo")
+          alert("Hubo un error inesperado, intentálo de nuevo")
         }
       );
     } else {
