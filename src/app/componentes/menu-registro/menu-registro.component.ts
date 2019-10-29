@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 import { HttpClientService } from '../../services/http-client.service'
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu-registro',
@@ -11,7 +10,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MenuRegistroComponent implements OnInit {
   public usuario: Usuario;
+  public datos1 : String;
+  
   showAge;
+  
   
   constructor(
     private _httpClientService: HttpClientService
@@ -37,7 +39,6 @@ export class MenuRegistroComponent implements OnInit {
     const timeDiff = Math.abs(Date.now() - convertAge.getTime());
     this.showAge = Math.floor((timeDiff / (1000 * 3600 * 24)) / 365);
 
-    if(this.usuario.identification == )
     if (this.showAge >= 18) {
       this._httpClientService.registrar(usuario).subscribe(
         (response: any) => {
